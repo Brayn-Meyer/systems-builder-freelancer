@@ -1,23 +1,23 @@
 const steps = [
   {
     title: "Understanding the problem",
-    description: "Clarifying what actually needs to be solved, not just what's been requested."
+    description: "I start by learning how your business currently works and where the bottlenecks are. This ensures we solve the right problem, not just what’s on paper."
   },
   {
     title: "Defining constraints",
-    description: "Identifying technical, organizational, and time boundaries that shape the solution."
+    description: "I clarify what tools, timelines, and resources we have so the solution fits your operations perfectly."
   },
   {
     title: "Designing the system",
-    description: "Mapping data flows, interfaces, and failure modes before writing code."
+    description: "Before writing any code, I map how information flows, how users interact with the system, and potential failure points. This prevents headaches later."
   },
   {
     title: "Building incrementally",
-    description: "Delivering working software in stages, validating assumptions early."
+    description: "I deliver working software in stages so you can see progress early and provide feedback along the way."
   },
   {
     title: "Validating outcomes",
-    description: "Measuring whether the system solves the original problem effectively."
+    description: "Finally, I make sure the system actually improves your workflow, saves time, and reduces errors — so you can measure real results."
   }
 ];
 
@@ -28,12 +28,12 @@ const HowIWork = () => {
         <div className="flex items-center gap-3 mb-10">
           <span className="section-number">02</span>
           <div className="divider flex-1" />
-          <p className="label">How I Work</p>
+          <p className="label">How I Deliver Results</p>
         </div>
         
         <p className="text-muted-foreground mb-8 max-w-lg">
-          I follow a structured approach to problem-solving. Each project moves through 
-          these phases, though the boundaries are often fluid.
+          I take a structured approach to building software that actually works for your business. 
+          Every project has clear steps, so you get results without unnecessary complexity.
         </p>
         
         <ul className="process-list">

@@ -7,17 +7,20 @@ const Contact = () => {
         <div className="flex items-center gap-3 mb-10">
           <span className="section-number">04</span>
           <div className="divider flex-1" />
-          <p className="label">Get in Touch</p>
+          <p className="label">Let’s Build Your Solution</p>
         </div>
         
         <p className="text-muted-foreground mb-2 max-w-md">
-          I'm available for consulting and contract work on internal tools and 
-          operational systems. If you're working on something interesting, I'd be 
-          happy to hear about it.
+          Need a dashboard or internal system that actually works?
         </p>
+        <p className="text-muted-foreground mb-2 max-w-md">
+          I help small businesses replace spreadsheets and manual processes with reliable tools.
+        </p>
+
+        <br/>
         
         <p className="text-muted-foreground mb-8 max-w-md text-sm">
-          The best way to reach me is by email.
+          Get in touch via email to schedule a consultation.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
@@ -29,7 +32,7 @@ const Contact = () => {
             brayncmeyer@gmail.com
           </a>
           
-          <a 
+          {/* <a 
             href="https://github.com/brayn-meyer" 
             target="_blank" 
             rel="noopener noreferrer"
@@ -47,7 +50,7 @@ const Contact = () => {
           >
             <Linkedin className="w-4 h-4" />
             LinkedIn
-          </a>
+          </a> */}
         </div>
       </div>
     </section>

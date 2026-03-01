@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import ProjectCard from "./ProjectCard";
-import { getFeaturedProjects } from "@/data/projects";
+import { getAllProjects, getFeaturedProjects } from "@/data/projects";
 
 const Projects = () => {
   const featuredProjects = getFeaturedProjects();
+  const hasMoreThanFourProjects = getAllProjects().length > 4;
 
   return (
     <section id="projects" className="section border-t border-border bg-card">
@@ -12,18 +13,20 @@ const Projects = () => {
         <div className="flex items-center gap-3 mb-12">
           <span className="section-number">01</span>
           <div className="divider flex-1" />
-          <p className="label">Selected Projects</p>
+          <p className="label">Solutions I’ve Built</p>
         </div>
         
-        <div className=" pb-6 border-b border-border">
-          <Link 
-            to="/projects" 
-            className="inline-flex items-center gap-3 text-foreground font-medium hover:text-warm transition-colors group"
-          >
-            <span>View all projects</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-          </Link>
-        </div>
+        {hasMoreThanFourProjects && (
+          <div className=" pb-6 border-b border-border">
+            <Link 
+              to="/projects" 
+              className="inline-flex items-center gap-3 text-foreground font-medium hover:text-warm transition-colors group"
+            >
+              <span>See More Projects</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+          </div>
+        )}
 
         <div>
           {featuredProjects.map((project, index) => (

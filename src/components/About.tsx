@@ -5,7 +5,7 @@ const About = () => {
         <div className="flex items-center gap-3 mb-10">
           <span className="section-number">03</span>
           <div className="divider flex-1" />
-          <p className="label">About</p>
+          <p className="label">About Me</p>
         </div>
         
         <div className="space-y-6 max-w-xl">
@@ -25,6 +25,11 @@ const About = () => {
             I prefer working on problems where reliability matters more than novelty, 
             and where success is measured by what the system enables people to do—not 
             by how impressive it looks.
+          </p>
+
+          <p>
+            I work with small businesses and growing teams that need structured systems 
+            not generic templates.
           </p>
         </div>
       </div>

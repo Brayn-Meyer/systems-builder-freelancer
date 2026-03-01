@@ -1,4 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Sun, Moon } from "lucide-react";
 
 const Header = () => {
   const location = useLocation();
@@ -6,6 +8,24 @@ const Header = () => {
   const isHomePage = location.pathname === "/";
   const navButtonClass = "w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors";
   const navIconClass = "w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-200 ease-in-out transform hover:scale-110";
+
+  const [isDark, setIsDark] = useState<boolean>(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    const darkPreferred = saved === "dark" || (!saved && document.documentElement.classList.contains("dark"));
+    setIsDark(darkPreferred);
+    document.documentElement.classList.toggle("dark", darkPreferred);
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDark((prev) => {
+      const next = !prev;
+      document.documentElement.classList.toggle("dark", next);
+      localStorage.setItem("theme", next ? "dark" : "light");
+      return next;
+    });
+  };
 
   const handleHomeClick = () => {
     if (isHomePage) {
@@ -37,10 +57,25 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
       <div className="container-narrow py-3 sm:py-4 flex items-center justify-between gap-3">
-        <p className="font-medium text-sm sm:text-base whitespace-nowrap">
-          <span className="sm:hidden">BCM - P</span>
-          <span className="hidden sm:inline">Brayn C Meyer - Portfolio</span>
-        </p>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <p className="font-medium text-sm sm:text-base whitespace-nowrap">
+            <span className="sm:hidden">BCM</span>
+            <span className="hidden sm:inline">Brayn C Meyer</span>
+          </p>
+
+          {/* theme toggle moved away from navigation */}
+          <button
+            onClick={toggleTheme}
+            className={navButtonClass}
+            aria-label="Toggle dark mode"
+          >
+            {isDark ? (
+              <Sun className={navIconClass} />
+            ) : (
+              <Moon className={navIconClass} />
+            )}
+          </button>
+        </div>
 
         <nav className="flex items-center gap-2 sm:gap-4 md:gap-8 shrink-0">
           {isHomePage ? (

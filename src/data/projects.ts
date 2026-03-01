@@ -26,88 +26,89 @@ export interface ProjectDetail extends Project {
  */
 export const projects: ProjectDetail[] = [
   {
-    slug: "mordern-tech-solutions",
-    title: "Modern Tech Solutions",
-    problem: "Employee information was being kept in spreadsheets making the whole operation tedious and unmanageble.",
-    techStack: ["Vue.js", "Node.js", "SQL", "HTML", "CSS"],
+    slug: "gym-management-dashboard",
+    title: "Gym Management Dashboard",
+    problem: "Tracking members, attendance, and class bookings was done manually, causing confusion and wasted time for gym staff.",
+    techStack: ["React", "Tailwind CSS", "Mock Data (Frontend Only)"],
     featured: true,
-    githubUrl: "https://github.com/Brayn-Meyer/moderntech-solutions-hr-system.git",
-    liveUrl: "https://moderntech-solutions-hr-system.vercel.app/",
+    githubUrl: "https://github.com/Brayn-Meyer/gym-management-dashboard-demo",
+    liveUrl: "https://gym-dashboard-demo.vercel.app/",
     constraints: [
-      "Worked in a group of 3",
-      "Had 2 weeks to complete the project",
-      "Was restricted to using only the specified tech stack"
+      "Built as a frontend-only prototype with no backend",
+      "All data is mock data stored locally in the frontend",
+      "Focused purely on user interface and usability for small gyms"
     ],
-    systemDesign: "Data and employee information is store in a digital database. This allows hr to keep track of all information in one place and easily access it. The system also allows for easy updates and changes to employee information without the need for manual updates to spreadsheets.",
+    systemDesign: "The dashboard consolidates member information, class bookings, and attendance into one clear interface. Staff can easily add or edit members, mark attendance, and track bookings, all through a responsive and user-friendly UI.",
     implementation: [
-      "Built overall design and asethic in Vue.js with HTML and CSS",
-      "Made api calls to the backend using Node.js to fetch and update employee information",
-      "Stored employee information in a SQL database for easy access and management",
-      "Intergrated Vue.js frontend with Node.js backend to create a seamless user experience for hr staff"
+      "Designed the overall layout and UI using React components and Tailwind CSS",
+      "Created reusable components for cards, tables, and modals",
+      "Managed frontend state using mock data arrays to simulate real operations",
+      "Implemented client-side interactions such as adding/editing members, marking attendance, and booking classes"
     ],
-    outcome: "Reduced the time it took to update employee information and kept all employee information in one place.",
+    outcome: "Simplified daily gym operations, making it easy to manage members, track attendance, and organize classes without manual spreadsheets.",
     lessons: [
-      "How to work in a small group and divide tasks effectively",
-      "How to manage time effectively to complete a project within a tight deadline",
-      "How to work with a specific tech stack and leverage its strengths to build a functional and user-friendly application"
+      "Learned how to design a fully functional frontend dashboard for real-world operational problems",
+      "Improved skills in building reusable React components",
+      "Practiced designing intuitive user interfaces that small business staff can easily navigate"
     ]
-  },
-  {
-    slug: "we-plan-ecommerce",
-    title: "We Plan E-Commerce",
-    problem: "New client setup required manual coordination across 5 departments with no visibility into progress.",
-    techStack: ["PHP", "SQL", "HTML", "CSS"],
-    featured: true,
-    githubUrl: "https://github.com/Brayn-Meyer/weplan-e-commerce-website.git",
-    // liveUrl: "https://moderntech-solutions-hr-system.vercel.app/",
-    constraints: [
-      "Each department had different internal systems",
-      "Compliance requirements mandated specific task ordering",
-      "No dedicated IT staff for ongoing maintenance",
-      "Must work with existing email-based culture"
-    ],
-    systemDesign: "Created a state machine-based pipeline where each client moves through defined stages. Tasks are assigned automatically based on stage transitions. The system integrates with email for notifications but stores all state centrally, providing a single source of truth.",
-    implementation: [
-      "Modeled onboarding as a directed acyclic graph of dependent tasks",
-      "Built REST API for status updates from department-specific tools",
-      "Implemented escalation logic for overdue tasks",
-      "Created admin interface for pipeline customization without code changes"
-    ],
-    outcome: "Reduced average onboarding time from 3 weeks to 5 days. Task completion visibility went from 0% to 100%. Zero missed compliance steps since deployment.",
-    lessons: [
-      "State machines provide clarity that ad-hoc status fields cannot match",
-      "Email notifications work when they link to a canonical status page",
-      "Building for configurability upfront saved significant maintenance time"
-    ]
-  },
-  {
-    slug: "overdrive-tech-enterprise",
-    title: "Overdrive Tech Enterprise",
-    problem: "Monthly reports took 2 days to compile from multiple data sources with frequent errors.",
-    techStack: ["Oracle Apex", "SQL"],
-    featured: true,
-    // githubUrl: "https://github.com/username/reporting-dashboard",
-    liveUrl: "https://oracleapex.com/ords/r/lifechoicesacademy/ot-enterprise/dashboard",
-    constraints: [
-      "Data sources included legacy systems with no APIs",
-      "Some data required manual review before inclusion",
-      "Reports needed to match existing format exactly",
-      "Finance team had no SQL or programming experience"
-    ],
-    systemDesign: "Built a data pipeline that extracts from each source on a schedule, transforms data into a unified schema, and loads it into a reporting database. A React dashboard provides real-time access, while a scheduled job generates the monthly PDF matching the legacy format.",
-    implementation: [
-      "Created adapters for each data source, including screen-scraping for legacy systems",
-      "Built a staging area for manual data review with approval workflow",
-      "Implemented incremental updates to minimize extraction load",
-      "Added data quality checks that flag anomalies before report generation"
-    ],
-    outcome: "Reduced monthly reporting time from 2 days to 2 hours (mostly review). Eliminated data entry errors. Enabled weekly metrics access that wasn't previously feasible.",
-    lessons: [
-      "Matching existing output formats exactly builds trust faster than 'improved' formats",
-      "Human review steps can be systematized without being eliminated",
-      "Data quality issues are best caught at ingestion, not report generation"
-    ]
-  },
+  }
+  // ,
+  // {
+  //   slug: "we-plan-ecommerce",
+  //   title: "We Plan E-Commerce",
+  //   problem: "New client setup required manual coordination across 5 departments with no visibility into progress.",
+  //   techStack: ["PHP", "SQL", "HTML", "CSS"],
+  //   featured: true,
+  //   githubUrl: "https://github.com/Brayn-Meyer/weplan-e-commerce-website.git",
+  //   // liveUrl: "https://moderntech-solutions-hr-system.vercel.app/",
+  //   constraints: [
+  //     "Each department had different internal systems",
+  //     "Compliance requirements mandated specific task ordering",
+  //     "No dedicated IT staff for ongoing maintenance",
+  //     "Must work with existing email-based culture"
+  //   ],
+  //   systemDesign: "Created a state machine-based pipeline where each client moves through defined stages. Tasks are assigned automatically based on stage transitions. The system integrates with email for notifications but stores all state centrally, providing a single source of truth.",
+  //   implementation: [
+  //     "Modeled onboarding as a directed acyclic graph of dependent tasks",
+  //     "Built REST API for status updates from department-specific tools",
+  //     "Implemented escalation logic for overdue tasks",
+  //     "Created admin interface for pipeline customization without code changes"
+  //   ],
+  //   outcome: "Reduced average onboarding time from 3 weeks to 5 days. Task completion visibility went from 0% to 100%. Zero missed compliance steps since deployment.",
+  //   lessons: [
+  //     "State machines provide clarity that ad-hoc status fields cannot match",
+  //     "Email notifications work when they link to a canonical status page",
+  //     "Building for configurability upfront saved significant maintenance time"
+  //   ]
+  // },
+  // {
+  //   slug: "overdrive-tech-enterprise",
+  //   title: "Overdrive Tech Enterprise",
+  //   problem: "Monthly reports took 2 days to compile from multiple data sources with frequent errors.",
+  //   techStack: ["Oracle Apex", "SQL"],
+  //   featured: true,
+  //   // githubUrl: "https://github.com/username/reporting-dashboard",
+  //   liveUrl: "https://oracleapex.com/ords/r/lifechoicesacademy/ot-enterprise/dashboard",
+  //   constraints: [
+  //     "Data sources included legacy systems with no APIs",
+  //     "Some data required manual review before inclusion",
+  //     "Reports needed to match existing format exactly",
+  //     "Finance team had no SQL or programming experience"
+  //   ],
+  //   systemDesign: "Built a data pipeline that extracts from each source on a schedule, transforms data into a unified schema, and loads it into a reporting database. A React dashboard provides real-time access, while a scheduled job generates the monthly PDF matching the legacy format.",
+  //   implementation: [
+  //     "Created adapters for each data source, including screen-scraping for legacy systems",
+  //     "Built a staging area for manual data review with approval workflow",
+  //     "Implemented incremental updates to minimize extraction load",
+  //     "Added data quality checks that flag anomalies before report generation"
+  //   ],
+  //   outcome: "Reduced monthly reporting time from 2 days to 2 hours (mostly review). Eliminated data entry errors. Enabled weekly metrics access that wasn't previously feasible.",
+  //   lessons: [
+  //     "Matching existing output formats exactly builds trust faster than 'improved' formats",
+  //     "Human review steps can be systematized without being eliminated",
+  //     "Data quality issues are best caught at ingestion, not report generation"
+  //   ]
+  // },
   // {
   //   slug: "document-workflow",
   //   title: "Document Workflow Engine",
